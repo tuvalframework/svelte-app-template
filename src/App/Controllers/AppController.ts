@@ -1,5 +1,7 @@
 import { cTop, HStack, State, Text, TForm, UIController, UIScene, VStack } from '@tuval/forms';
 import {SvelteView} from '../../View/SvelteView'
+import MyView from '../../MyView.svelte';
+import App from 'src/App.svelte';
 
 export class AppController extends UIController {
 
@@ -16,7 +18,8 @@ export class AppController extends UIController {
     public LoadView() {
         return UIScene(
             VStack({ alignment: cTop })(
-                SvelteView()
+                SvelteView().svelteComponent(MyView),
+                SvelteView().svelteComponent(App)
             )
 
         )
